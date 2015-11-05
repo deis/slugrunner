@@ -16,20 +16,16 @@ SEC := manifests/deis-store-secret.yaml
 
 all: build docker-build docker-push
 
-build:
-	mkdir -p ${BINDIR}
-	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -a -installsuffix cgo -ldflags '-s' -o $(BINDIR)/boot boot.go || exit 1
-
 docker-build:
 	docker build --rm -t ${IMAGE} rootfs
 	# These are both YAML specific
-	# perl -pi -e "s|image: [a-z0-9.:]+\/deis\/${SHORT_NAME}:[0-9a-z-.]+|image: ${IMAGE}|g" ${RC}
-	# perl -pi -e "s|release: [a-zA-Z0-9.+_-]+|release: ${VERSION}|g" ${RC}
+	perl -pi -e "s|image: [a-z0-9.:]+\/deis\/${SHORT_NAME}:[0-9a-z-.]+|image: ${IMAGE}|g" ${RC}
+	perl -pi -e "s|release: [a-zA-Z0-9.+_-]+|release: ${VERSION}|g" ${RC}
 
 docker-push:
 	docker push ${IMAGE}
 
-deploy: docker-build docker-push
+deploy: docker-build docker-push kube-pod
 
 kube-pod: kube-service
 	kubectl create -f ${POD}

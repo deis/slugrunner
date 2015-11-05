@@ -1,9 +1,7 @@
-# Deis Minio
+# Deis Slugrunner
 
-This package provides a Minio S3-compatible object storage system inside
-of Kubernetes.
-
-- [Minio](http://minio.io)
+deis/slugrunner which pulls slugfile from an endpoint that might be a file server or S3 based ocject store and
+pulls slugfile and runs app based on the procfile.
 
 ## Installation
 
