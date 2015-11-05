@@ -1,0 +1,31 @@
+# A debugging utility for testing Minio from within k8s.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: deis-slugrunner
+  labels:
+    heritage: deis
+    version: 2015-sept
+spec:
+  restartPolicy: Never
+  containers:
+    - name: deis-slugrunner
+      imagePullPolicy: Always
+      image: smothiki/slugrunner:1
+      ports:
+        - containerPort: 5000
+      command:
+        - /runner/init
+      args:
+        - "start web"
+      env:
+        - name: SLUG_URL
+          value: "https://s3.amazonaws.com/mydaffa/myslug.tgz"
+      volumeMounts:
+        - name: object-store
+          mountPath: /var/run/secrets/object/store
+          readOnly: true
+  volumes:
+    - name: object-store
+      secret:
+        secretName: object-store
