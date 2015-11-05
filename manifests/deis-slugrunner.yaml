@@ -11,14 +11,15 @@ spec:
   containers:
     - name: deis-slugrunner
       imagePullPolicy: Always
-      image: smothiki/slugrunner:1
-      ports:
-        - containerPort: 5000
-      command:
-        - /runner/init
+      image: smothiki/slugrunner:4
       args:
-        - "start web"
+        - "start"
+        - "web"
       env:
+        - name: PORT
+          value: "5000"
+        - name: DEBUG
+          value: "1"
         - name: SLUG_URL
           value: "https://s3.amazonaws.com/mydaffa/myslug.tgz"
       volumeMounts:
