@@ -1,7 +1,9 @@
 # Deis Slugrunner
 
-deis/slugrunner which pulls slugfile from an endpoint that might be a file server or S3 based ocject store and
-pulls slugfile and runs app based on the procfile.
+[![Build Status](https://travis-ci.org/deis/slugrunner.svg?branch=master)](https://travis-ci.org/deis/slugrunner) [![Docker Repository on Quay](https://quay.io/repository/deisci/slugrunner/status "Docker Repository on Quay")](https://quay.io/repository/deisci/slugrunner)
+
+
+`deis/slugrunner` pulls a slugfile from an endpoint (which may be a file server or stored on an S3 API compatible server), and runs it based on its Procfile
 
 ## Installation
 
