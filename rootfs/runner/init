@@ -17,7 +17,6 @@ elif [[ $SLUG_URL ]]; then
 			secretKey=`cat /var/run/secrets/object/store/access-secret-key`
 			protocol=`echo $SLUG_URL | awk -F/ '{print $1}'`
 			domain=`echo $SLUG_URL | awk -F/ '{print $3}'`
-			echo $keyID $secretKey $domain
 			mc config host add $protocol//$domain $keyID $secretKey &>/dev/null
 			mc --quiet cp $SLUG_URL slug.tgz &>/dev/null
 			tar -xzf slug.tgz -C $HOME
