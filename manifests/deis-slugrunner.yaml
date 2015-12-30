@@ -11,7 +11,7 @@ spec:
   containers:
     - name: deis-slugrunner
       imagePullPolicy: Always
-      image: smothiki/slugrunner:4
+      image: deisci/slugrunner:v2-alpha2
       args:
         - "start"
         - "web"
