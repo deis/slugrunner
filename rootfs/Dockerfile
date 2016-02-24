@@ -19,7 +19,7 @@ USER slug
 ENV HOME /app
 ENTRYPOINT ["/runner/init"]
 
-ENV DEIS_RELEASE 1.11.0-dev
+ENV DEIS_RELEASE 2.0.0-dev
 
 ONBUILD RUN mkdir -p /app
 ONBUILD WORKDIR /app
