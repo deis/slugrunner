@@ -8,6 +8,8 @@ set -eo pipefail
 export HOME=/app
 mkdir -p $HOME
 
+gcs=storage.googleapis.com
+
 if [[ $(ls -A $HOME) ]]; then
 	true
 elif [[ $SLUG_URL ]]; then
@@ -17,7 +19,11 @@ elif [[ $SLUG_URL ]]; then
 			secretKey=`cat /var/run/secrets/object/store/access-secret-key`
 			protocol=`echo $SLUG_URL | awk -F/ '{print $1}'`
 			domain=`echo $SLUG_URL | awk -F/ '{print $3}'`
-			mc config host add $protocol//$domain $keyID $secretKey &>/dev/null
+			if [ "$domain" = "$gcs" ]; then
+				mc config host add "$protocol//$domain" $keyID $secretKey S3v2 &>/dev/null
+			else
+				mc config host add "$protocol//$domain" $keyID $secretKey &>/dev/null
+			fi
 			mc --quiet cp $SLUG_URL slug.tgz &>/dev/null
 			tar -xzf slug.tgz -C $HOME
 			rm slug.tgz
