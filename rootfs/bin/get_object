@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+import boto3
+import botocore
+from botocore.utils import fix_s3_host
+
+
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_DEFAULT_REGION = os.getenv('AWS_DEFAULT_REGION')
+bucket_name = os.getenv('bucket_name')
+
+slug_path = os.getenv('SLUG_URL')
+
+if os.getenv('BUILDER_STORAGE') == "s3":
+    conn = boto3.resource('s3', aws_access_key_id=AWS_ACCESS_KEY_ID, aws_secret_access_key=AWS_SECRET_ACCESS_KEY, region_name=AWS_DEFAULT_REGION)
+else:
+    conn = boto3.resource('s3', endpoint_url=os.getenv('S3_URL'))
+    # stop boto3 from automatically changing the endpoint
+    conn.meta.client.meta.events.unregister('before-sign.s3', fix_s3_host)
+
+conn.Bucket(bucket_name).Object(slug_path).download_file('slug.tgz')
