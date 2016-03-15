@@ -15,9 +15,10 @@ ADD ./runner /runner
 ADD ./bin /bin
 RUN chown slug:slug /runner/init
 RUN chown slug:slug /bin/mc
-RUN apt-get update && apt-get install -y curl python
+RUN apt-get update && apt-get install -y curl python libffi-dev
 RUN curl -sSL https://raw.githubusercontent.com/pypa/pip/7.1.2/contrib/get-pip.py | python -
 RUN pip install boto3==1.2.6
+RUN pip install  gcloud==0.11.0
 USER slug
 ENV HOME /app
 ENTRYPOINT ["/runner/init"]
