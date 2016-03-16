@@ -8,8 +8,6 @@ set -eo pipefail
 export HOME=/app
 mkdir -p $HOME
 
-gcs=storage.googleapis.com
-
 if [[ $(ls -A $HOME) ]]; then
 	true
 elif [[ $SLUG_URL ]]; then
