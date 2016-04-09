@@ -7,20 +7,17 @@ RUN addgroup --quiet --gid 2000 slug && \
 RUN chown slug:slug /app
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y curl python libffi-dev
-RUN curl -sSL https://raw.githubusercontent.com/pypa/pip/7.1.2/contrib/get-pip.py | python -
-RUN pip install boto3==1.2.6
-RUN pip install  gcloud==0.11.0
-RUN pip install azure-storage==0.30.0
-
 # add default port to expose (can be overridden)
 ENV PORT 5000
 EXPOSE 5000
 
 ADD ./runner /runner
 ADD ./bin /bin
+ADD https://dl.bintray.com/deis/deisci/objstorage-0314fc5-linux-amd64 /bin/objstorage
+RUN chmod +x /bin/objstorage
 RUN chown slug:slug /runner/init
 RUN chown slug:slug /bin/get_object
+RUN chown slug:slug /bin/objstorage
 
 USER slug
 ENV HOME /app

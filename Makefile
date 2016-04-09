@@ -2,12 +2,6 @@ SHORT_NAME := slugrunner
 
 export GO15VENDOREXPERIMENT=1
 
-# Note that Minio currently uses CGO.
-
-LDFLAGS := "-s -X main.version=${VERSION}"
-BINDIR := ./rootfs/bin
-DEV_REGISTRY ?= $$DEV_REGISTRY
-DEIS_REGISTRY ?= ${DEV_REGISTRY}/
 IMAGE_PREFIX ?= deis
 
 include versioning.mk
