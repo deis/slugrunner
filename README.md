@@ -15,7 +15,7 @@ This Deis component is currently in beta status, and we welcome your input! If y
 
 # About
 
-The slugrunner downloads a [slug](https://devcenter.heroku.com/articles/slug-compiler) from a specified [S3 API compatible server][s3-api] and runs it based on its [Procfile](https://devcenter.heroku.com/articles/procfile).
+The slugrunner downloads a [slug](https://devcenter.heroku.com/articles/slug-compiler) from a specified [Minio][minio], [S3][s3], [GCS][gcs], or [Azure][azure] storage service and runs it based on its [Procfile](https://devcenter.heroku.com/articles/procfile).
 
 This component is usually launched by the [Deis Controller](https://github.com/deis/controller) and used inside the Deis [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service), but it is flexible enough to be used as a component inside any Kubernetes cluster.
 
@@ -31,4 +31,7 @@ The Deis project welcomes contributions from all developers. The high level proc
 
 [issues]: https://github.com/deis/slugrunner/issues
 [prs]: https://github.com/deis/slugrunner/pulls
-[s3-api]: http://docs.aws.amazon.com/AmazonS3/latest/API/APIRest.html
+[minio]: https://minio.io/
+[s3]: https://aws.amazon.com/s3/
+[gcs]: https://cloud.google.com/storage/
+[azure]: https://azure.microsoft.com/services/storage/
