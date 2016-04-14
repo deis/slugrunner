@@ -13,7 +13,7 @@ EXPOSE 5000
 
 ADD ./runner /runner
 ADD ./bin /bin
-ADD https://dl.bintray.com/deis/deisci/objstorage-0314fc5-linux-amd64 /bin/objstorage
+ADD https://dl.bintray.com/deis/deisci/objstorage-90ca1f4-linux-amd64 /bin/objstorage
 RUN chmod +x /bin/objstorage
 RUN chown slug:slug /runner/init
 RUN chown slug:slug /bin/get_object
