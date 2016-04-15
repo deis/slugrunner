@@ -1,3 +1,16 @@
+### v2.0.0-beta1 -> v2.0.0-beta2
+
+#### Features
+
+ - [`12dc491`](https://github.com/deis/slugrunner/commit/12dc491eec00604301cc72d1ee6c80f8cf030987) storage: use the objectstorage cli for upload and download of slug
+ - [`2362fb8`](https://github.com/deis/slugrunner/commit/2362fb81921b437aeded5aa3703a69a499cd0eb1) _scripts: add CHANGELOG.md and generator script
+ - [`b6174af`](https://github.com/deis/slugrunner/commit/b6174af8268af04832c9971e4505afd682133d19) storage: Add support for multiple object storages
+
+#### Fixes
+
+ - [`ca4bcdc`](https://github.com/deis/slugrunner/commit/ca4bcdc77a1174ad8d3032cae0c3c04f62f15ae9) objectstorecli: the latest version having the s3 auth fix
+ - [`bcdeae2`](https://github.com/deis/slugrunner/commit/bcdeae2a895d506f1b54c1bdf54a8ec8d8161d1c) .travis.yml: run docker build on all builds
+
 ### 2.0.0-alpha -> v2.0.0-beta1
 
 #### Features
