@@ -72,5 +72,5 @@ else
 fi
 
 ## Run!
-
-exec "$runner" "$command"
+# shellcheck disable=SC2086
+exec $runner "$command"
