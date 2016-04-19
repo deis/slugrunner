@@ -9,15 +9,3 @@ services:
 sudo: required
 script:
   - make bootstrap test build docker-build
-deploy:
-  provider: script
-  script: _scripts/deploy.sh
-  on:
-    branch: master
-notifications:
-  webhooks:
-    urls:
-      - secure: "j2AYIvg1bBAP70BQr9hxkO132aptS7zTFMl0XSabRAlAhY/UjLV2Fk8mT9XaTl/95FHnf+oWhv0rUrgB4gplbiiHyL3WhnCHOQzT26ucVKSET/QNfrNGagFBDN0i0/WA2mButHUbkV7cAYSXTNjGdTUYGE1mRHCuu5jLUKizPyc+8HTJIpF8MNiHxEhmc5kXIcwM+ziNskbE4TpAlTnAFjD3JwinqcKpqxvT3SpkcCbsY+6lXr1jqrM+rgQwgNvSRrtpDWNf94Oa4xgGf81sD7CeoyiOleMH1rZXQFmzVuiwogi2HuBw9d8eTiRyOrpzNsX2MrNe6bTagyM4zq9TgQM2FH3h9BpHG2VpLGj3d9IIRw5PI5cAqWAc6uFpJxFRlzg1QXN6iFfGdwEpqNHad+BDcQ7WyFGls9yKRa4ebHkuw0UZF79t0uxhXQyD1trqtTiZlSmexOtB0TuQgKaWOkEepMao5MfkBFzxZcUehGovNa4dJAjahmvyNe6AmdCejnG/5fD2wxA94eEpB/QRgbyhKb1A6MuU+R9w+mPnaKMH2BCiQ88qwcfbtClmUekuHry8N0sxsgpUvUP0fIL6sDPgFh6c07/KPp25LfNuBuSm09iGcUolwCRt0Nc/k4KF7/O7I/3cmTWLeVZdZXvfF6eraUUOdDryLxF4OXYORb0="
-    on_success: always
-    on_failure: never
-    on_start: never
