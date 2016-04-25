@@ -1,3 +1,13 @@
+### v2.0.0-beta2 -> v2.0.0-beta3
+
+#### Fixes
+
+ - [`60ac51d`](https://github.com/deis/slugrunner/commit/60ac51d675f94a77963c3e34fcc9a44089953805) init: Fix error in init script
+
+#### Maintenance
+
+ - [`fcfb0f2`](https://github.com/deis/slugrunner/commit/fcfb0f208563231bb50f56d6056c18775ae4221c) .travis.yml: Deep six the travis -> jenkins webhooks
+
 ### v2.0.0-beta1 -> v2.0.0-beta2
 
 #### Features
