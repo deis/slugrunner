@@ -1,3 +1,9 @@
+### v2.0.0-beta3 -> v2.0.0-beta4
+
+#### Documentation
+
+ - [`6dbf654`](https://github.com/deis/slugrunner/commit/6dbf654a991d3b14f386aa1aecbd9471a1acd411) CHANGELOG.md: update for v2.0.0-beta3
+
 ### v2.0.0-beta2 -> v2.0.0-beta3
 
 #### Fixes
