@@ -1,3 +1,14 @@
+### v2.0.0-beta4 -> v2.0.0-rc1
+
+#### Fixes
+
+ - [`73b6903`](https://github.com/deis/slugrunner/commit/73b690367858321e470ff06cb09b30265151e20a) Dockerfile: update objstorage CLI
+
+#### Maintenance
+
+ - [`27e516c`](https://github.com/deis/slugrunner/commit/27e516c7761ceb5dfc0fe4a5ebd5a9059654ffc8) rootfs/Dockerfile: DEIS_RELEASE -> WORKFLOW_RELEASE
+
+
 ### v2.0.0-beta3 -> v2.0.0-beta4
 
 #### Documentation
