@@ -1,3 +1,9 @@
+### v2.0.0-rc2 -> v2.0.0
+
+#### Documentation
+
+- [`1993192`](https://github.com/deis/slugrunner/commit/199319218532498bd0ece7afe7454075552f2bbe) CHANGELOG.md: add entry for v2.0.0-rc2
+
 ### v2.0.0-rc1 -> v2.0.0-rc2
 
 ### v2.0.0-beta4 -> v2.0.0-rc1
