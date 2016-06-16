@@ -13,7 +13,7 @@ EXPOSE 5000
 
 ADD ./runner /runner
 ADD ./bin /bin
-ADD https://storage.googleapis.com/object-storage-cli/7d48b36/objstorage-7d48b36-linux-amd64 /bin/objstorage
+ADD https://storage.googleapis.com/object-storage-cli/bb8e054/objstorage-bb8e054-linux-amd64 /bin/objstorage
 RUN chmod +x /bin/objstorage
 RUN chown slug:slug /runner/init
 RUN chown slug:slug /bin/get_object
