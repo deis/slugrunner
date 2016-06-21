@@ -22,7 +22,7 @@ bootstrap:
 
 docker-build:
 	docker build --rm -t ${IMAGE} rootfs
-	docker tag -f ${IMAGE} ${MUTABLE_IMAGE}
+	docker tag ${IMAGE} ${MUTABLE_IMAGE}
 
 deploy: docker-build docker-push kube-pod
 
