@@ -54,23 +54,5 @@ case "$1" in
 		;;
 esac
 
-## Use sdutil to register with service discovery
-
-if [[ $SD_NAME && $PORT ]]; then
-	if [[ $SD_HOST ]]; then
-		runner="sdutil exec -h $SD_HOST -s $SD_NAME:$PORT bash -c"
-		unset SD_HOST
-	else
-		runner="sdutil exec -s $SD_NAME:$PORT bash -c"
-	fi
-	unset SD_NAME
-elif [[ $SD_ARGS ]]; then
-	runner="sdutil $SD_ARGS bash -c"
-	unset SD_ARGS
-else
-	runner="bash -c"
-fi
-
 ## Run!
-# shellcheck disable=SC2086
-exec $runner "$command"
+exec bash -c "$command"
