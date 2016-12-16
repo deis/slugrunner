@@ -12,13 +12,8 @@ ENV PORT 5000
 EXPOSE 5000
 
 ADD ./runner /runner
-ADD ./bin /bin
-ADD https://storage.googleapis.com/object-storage-cli/bb8e054/objstorage-bb8e054-linux-amd64 /bin/objstorage
-RUN chmod +x /bin/objstorage && \
-    chown slug:slug /app \
-                    /runner/init \
-                    /bin/get_object \
-                    /bin/objstorage
+RUN chown slug:slug /app \
+                    /runner/init
 
 USER slug
 ENV HOME /app
