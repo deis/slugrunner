@@ -21,7 +21,7 @@ bootstrap:
 	@echo Nothing to do.
 
 docker-build:
-	docker build --pull --rm -t ${IMAGE} rootfs
+	docker build ${DOCKER_BUILD_FLAGS} -t ${IMAGE} rootfs
 	docker tag ${IMAGE} ${MUTABLE_IMAGE}
 
 deploy: docker-build docker-push kube-pod
@@ -48,7 +48,7 @@ kube-mc:
 	kubectl create -f manifests/deis-mc-pod.yaml
 
 mc:
-	docker build -t ${DEIS_REGISTRY}/deis/minio-mc:latest mc
+	docker build ${DOCKER_BUILD_FLAGS} -t ${DEIS_REGISTRY}/deis/minio-mc:latest mc
 	docker push ${DEIS_REGISTRY}/deis/minio-mc:latest
 	perl -pi -e "s|image: [a-z0-9.:]+\/|image: ${DEIS_REGISTRY}/|g" manifests/deis-mc-pod.yaml
 
