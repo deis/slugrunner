@@ -1,8 +1,5 @@
 # Deis Slugrunner v2
-
-
-
-[![Build Status](https://travis-ci.org/deis/slugrunner.svg?branch=master)](https://travis-ci.org/deis/slugrunner)
+[![Build Status](https://ci.deis.io/job/slugrunner/badge/icon)](https://ci.deis.io/job/slugrunner)
 [![Docker Repository on Quay](https://quay.io/repository/deisci/slugrunner/status "Docker Repository on Quay")](https://quay.io/repository/deisci/slugrunner)
 
 Deis (pronounced DAY-iss) Workflow is an open source Platform as a Service (PaaS) that adds a developer-friendly layer to any [Kubernetes](http://kubernetes.io) cluster, making it easy to deploy and manage applications on your own servers.
