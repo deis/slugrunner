@@ -10,11 +10,6 @@ mkdir -p $HOME
 
 if [[ $(ls -A $HOME) ]]; then
 	true
-elif [[ $SLUG_URL ]]; then
-	get_object
-	tar -xzf slug.tgz -C $HOME
-	rm slug.tgz
-	unset SLUG_URL
 else
 	cat | tar -xzC $HOME
 fi
