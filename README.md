@@ -1,3 +1,9 @@
+
+|![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/156px-Warning.svg.png) | Deis Workflow will soon no longer be maintained.<br />Please [read the announcement](https://deis.com/blog/2017/deis-workflow-final-release/) for more detail. |
+|---:|---|
+| 09/07/2017 | Deis Workflow [v2.18][] final release before entering maintenance mode |
+| 03/01/2018 | End of Workflow maintenance: critical patches no longer merged |
+
 # Deis Slugrunner v2
 [![Build Status](https://ci.deis.io/job/slugrunner/badge/icon)](https://ci.deis.io/job/slugrunner)
 [![Docker Repository on Quay](https://quay.io/repository/deisci/slugrunner/status "Docker Repository on Quay")](https://quay.io/repository/deisci/slugrunner)
@@ -32,3 +38,4 @@ The Deis project welcomes contributions from all developers. The high level proc
 [s3]: https://aws.amazon.com/s3/
 [gcs]: https://cloud.google.com/storage/
 [azure]: https://azure.microsoft.com/services/storage/
+[v2.18]: https://github.com/deis/workflow/releases/tag/v2.18.0
